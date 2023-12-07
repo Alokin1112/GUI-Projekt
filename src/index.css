@@ -1,0 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
+.layout__wrapper {
+  padding: 10px;
+}
