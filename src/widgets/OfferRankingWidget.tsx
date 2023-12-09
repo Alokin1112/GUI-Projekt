@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from "react";
 import * as ReactDOM from "react-dom";
 
-export const OrdersWidget: FunctionComponent = () => {
+export const OfferRankingWidget: FunctionComponent = () => {
 
   return (
     <>
-      <div className="card" style={{ gridArea: 'orders' }}>
+      <div className="card" style={{ gridArea: 'offerRanking' }}>
         <div className="card-body">
-          OrdersWidget
+          OfferRankingWidget
         </div>
       </div>
     </>

@@ -4,18 +4,20 @@ import plFlag from '../assets/images/flag-poland.png'
 import ukFlag from '../assets/images/flag-united-kingdom.png'
 import { useSelector, useDispatch } from 'react-redux'
 import { changeLanguage, changeTheme } from '../core/store/globalSettingsSlice'
+import { useTranslation } from "react-i18next";
 
 
 const Layout: FunctionComponent<{ children: any }> = ({ children }) => {
   const { language, theme } = useSelector((state: any) => ({ language: state?.globalSettings?.language, theme: state?.globalSettings?.theme }))
   const dispatch = useDispatch();
+  const { t } = useTranslation();
 
   return (
     <>
       <nav className="navbar bg-body-tertiary">
         <div className="container-fluid">
           <div className="d-flex ">
-            <a className="navbar-brand title">Dashboard</a>
+            <a className="navbar-brand title">{t('title')}</a>
           </div>
           <div className="d-flex gap-4">
             <div

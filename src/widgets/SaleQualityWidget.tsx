@@ -1,11 +1,15 @@
 import React, { FunctionComponent } from "react";
 import * as ReactDOM from "react-dom";
 
-export const OrdersWidget: FunctionComponent = () => {
+export const SaleQualityWidget: FunctionComponent = () => {
 
   return (
     <>
-      CustomersReviewPage
+      <div className="card" style={{ gridArea: 'saleQuality' }}>
+        <div className="card-body">
+          SaleQualityWidget
+        </div>
+      </div>
     </>
   )
 }

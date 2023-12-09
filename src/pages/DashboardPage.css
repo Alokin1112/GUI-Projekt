@@ -1,0 +1,12 @@
+.dashboard__grid {
+  display: grid;
+  width: 100%;
+  margin: 16px auto;
+  gap: 8px;
+  grid-template-areas:
+    'orders orders orders orders saleQuality saleQuality'
+    'customerReview customerReview customerReview customerReview customerReview customerReview'
+    'saleTips saleTips offerRanking offerRanking offerRanking offerRanking'
+    'saleChart saleChart saleChart saleChart saleChart saleChart'
+  ;
+}
