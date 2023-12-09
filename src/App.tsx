@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
+import { RouterProvider, createBrowserRouter, Outlet, Navigate } from "react-router-dom";
 import Layout from "./layout/Layout";
 import { DashboardPage } from "./pages/DashboardPage";
 import { LoginPage } from "./pages/LoginPage";
@@ -11,6 +11,17 @@ import { SaleQualityPage } from "./pages/SaleQualityPage";
 import { OrdersPage } from "./pages/OrdersPage";
 import { useSelector } from "react-redux";
 
+
+function MustBeAuthorized({ children }) {
+  const isUser = useSelector((state: any) => !!state.user.name);
+  console.log(children)
+  return (
+    <>
+      {isUser ? <>{children}</> : <Navigate to={"/" + RoutesPath.LOGIN} />}
+    </>
+  )
+}
+
 export const PageRouting = createBrowserRouter([
   {
     path: `/${RoutesPath.LOGIN}`,
@@ -18,7 +29,9 @@ export const PageRouting = createBrowserRouter([
   },
   {
     path: "/",
-    element: <Layout><Outlet /></Layout >,
+    element: <MustBeAuthorized>
+      <Layout><Outlet /></Layout >
+    </MustBeAuthorized>,
     children: [
       {
         path: "/",
