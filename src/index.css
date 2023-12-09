@@ -5,3 +5,7 @@
 .layout__wrapper {
   padding: 10px;
 }
+
+.country__flag__image {
+  height: 20px;
+}

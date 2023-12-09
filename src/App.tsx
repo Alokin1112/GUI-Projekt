@@ -9,6 +9,7 @@ import { RoutesPath } from "./core/constants/RoutesPath.const";
 import { CustomersReviewPage } from "./pages/CustomersReview";
 import { SaleQualityPage } from "./pages/SaleQualityPage";
 import { OrdersPage } from "./pages/OrdersPage";
+import { useSelector } from "react-redux";
 
 export const PageRouting = createBrowserRouter([
   {
@@ -40,10 +41,14 @@ export const PageRouting = createBrowserRouter([
 ]);
 
 function App() {
+  const theme = useSelector((state: any) => (state?.globalSettings?.theme))
+
 
   return (
     <>
-      <RouterProvider router={PageRouting} />
+      <div data-bs-theme={theme} style={{ minHeight: '100vh', backgroundColor: theme === 'light' ? '#fafbfc' : '#212529', color: theme === 'light' ? '#000' : '#fafbfc' }}>
+        <RouterProvider router={PageRouting} />
+      </div>
     </>
   )
 }
