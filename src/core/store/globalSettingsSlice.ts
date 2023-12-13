@@ -24,7 +24,7 @@ export const globalSettingsSlice = createSlice({
       window.localStorage.setItem(THEME_KEY, state.theme)
     },
   },
-})
+});
 
 export const { changeLanguage, changeTheme } = globalSettingsSlice.actions
 
