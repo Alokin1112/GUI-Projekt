@@ -1,3 +1,10 @@
 {
-  "title": "Panel główny"
+  "title": "Panel główny",
+  "customersReview": {
+    "title": "Opinie kupujących",
+    "displayOpinions": "Wyświetl opinie",
+    "all": "Wszystkie",
+    "positive": "Pozytywne",
+    "nagative": "Negatywne"
+  }
 }

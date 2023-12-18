@@ -1,3 +1,10 @@
 {
-  "title": "Dashboard"
+  "title": "Dashboard",
+  "customersReview": {
+    "title": "Customers review",
+    "displayOpinions": "Display opinions",
+    "all": "All",
+    "positive": "Positive",
+    "nagative": "Negative"
+  }
 }

@@ -1,0 +1,18 @@
+.customers__table {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.customers__table>tr:first-child {
+  border-top: 1px solid var(--main-color);
+}
+
+.customers__table>tr {
+  border-bottom: 1px solid var(--main-color);
+  font-size: 16px;
+}
+
+.customers__table>tr>td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
