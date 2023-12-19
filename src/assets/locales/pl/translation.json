@@ -5,6 +5,7 @@
     "displayOpinions": "Wyświetl opinie",
     "all": "Wszystkie",
     "positive": "Pozytywne",
-    "nagative": "Negatywne"
+    "nagative": "Negatywne",
+    "noSuitableComments": "Brak odpowiadających komentarzy"
   }
 }

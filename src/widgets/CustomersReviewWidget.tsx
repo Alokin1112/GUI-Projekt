@@ -40,25 +40,44 @@ export const CustomersReviewWidget: FunctionComponent = () => {
   return (
     <>
       <CardWithTitle icon="star" title={t('customersReview.title')} style={{ gridArea: 'customerReview' }} link={'/' + RoutesPath.CUSTOMER_REVIEW}>
-        <Toggle title={t('customersReview.title')} items={items} handleChange={handleToggleChange} checked={checkedReviewType} />
+        {
+          comments?.length == 0 ?
+            <NoSuitableComments />
+            :
+            <>
+              <Toggle title={t('customersReview.title')} items={items} handleChange={handleToggleChange} checked={checkedReviewType} />
 
-        <table className="customers__table">
-          <tbody>
-            {
-              filteredComments?.map((item, index) => (
-                <tr key={index}>
-                  <td>{item?.author}</td>
-                  <td>
-                    <StarsDisplay review={item?.review} />
-                  </td>
-                  <td className="customers__table__comment" title={item?.comment}>{item?.comment}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
+              {filteredComments?.length == 0 ?
+                <NoSuitableComments /> :
+                <table className="customers__table">
+                  <tbody>
+                    {
+                      filteredComments?.map((item, index) => (
+                        <tr key={index}>
+                          <td>{item?.author}</td>
+                          <td>
+                            <StarsDisplay review={item?.review} />
+                          </td>
+                          <td className="customers__table__comment" title={item?.comment}>{item?.comment}</td>
+                        </tr>
+                      ))
+                    }
+                  </tbody>
+                </table>
+              }
+            </>
+        }
       </CardWithTitle>
     </>
+  )
+}
+
+function NoSuitableComments() {
+  const { t } = useTranslation();
+  return (
+    <h2 style={{ width: '100%', height: '60px', textAlign: 'center', margin: 0, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      {t('customersReview.noSuitableComments')}
+    </h2>
   )
 }
 

@@ -5,6 +5,7 @@
     "displayOpinions": "Display opinions",
     "all": "All",
     "positive": "Positive",
-    "nagative": "Negative"
+    "nagative": "Negative",
+    "noSuitableComments": "No suitable comments"
   }
 }
