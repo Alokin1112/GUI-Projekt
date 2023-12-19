@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { COMMENTS } from '../constants/CustomerReviews.const';
+import { ORDERS } from '../constants/Orders.const';
+
 
 export const userSlice = createSlice({
   name: 'user',
@@ -9,6 +11,7 @@ export const userSlice = createSlice({
       {
         name: 'Sklep 123',
         comments: COMMENTS,
+        orders: ORDERS,
       }
     ],
     selectedShop: 0

@@ -7,5 +7,11 @@
     "positive": "Pozytywne",
     "nagative": "Negatywne",
     "noSuitableComments": "Brak odpowiadających komentarzy"
+  },
+  "orders": {
+    "title": "Zamówienia",
+    "unPaid": "Nieopłacone",
+    "notSend": "Niewysłane",
+    "returns": "Zwroty"
   }
 }

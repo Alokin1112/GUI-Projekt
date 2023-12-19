@@ -7,5 +7,11 @@
     "positive": "Positive",
     "nagative": "Negative",
     "noSuitableComments": "No suitable comments"
+  },
+  "orders": {
+    "title": "Orders",
+    "unPaid": "Unpaid",
+    "notSend": "Not send",
+    "returns": "Returns"
   }
 }
