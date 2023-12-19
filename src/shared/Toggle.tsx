@@ -20,8 +20,8 @@ function Toggle(props) {
         role="group"
       >
 
-        {props?.items?.map((item) => (
-          <>
+        {props?.items?.map((item, index) => (
+          <React.Fragment key={index}>
             <input
               type="radio"
               className="btn-check"
@@ -37,7 +37,7 @@ function Toggle(props) {
             >
               {item?.title}
             </label>
-          </>
+          </React.Fragment>
         ))}
 
       </div>

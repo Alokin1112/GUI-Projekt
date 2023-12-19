@@ -1,9 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { COMMENTS } from '../constants/CustomerReviews.const';
 
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
     name: "dawid",
+    shops: [
+      {
+        name: 'Sklep 123',
+        comments: COMMENTS,
+      }
+    ],
+    selectedShop: 0
   },
   reducers: {
     setUser: (state, action) => {
