@@ -1,12 +1,17 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import './Card.css'
+import styled from "styled-components";
+
+const CardItem = styled.div`
+  border: 2px;
+  border: 1px solid var(--main-color);
+`
 
 function Card(props) {
   return (
-    <div className="card__item" style={props?.style}>
+    <CardItem style={props?.style}>
       {props?.children}
-    </div >
+    </CardItem >
   )
 }
 

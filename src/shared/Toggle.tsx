@@ -1,14 +1,21 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import styled from "styled-components";
 
 export interface ToggleItem {
   id: string,
   title: string,
 }
 
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap:4px;
+`
+
 function Toggle(props) {
   return (
-    <>
+    <Wrapper>
       {props?.title &&
         <div>
           {props?.title}
@@ -41,7 +48,7 @@ function Toggle(props) {
         ))}
 
       </div>
-    </>
+    </Wrapper>
   )
 }
 

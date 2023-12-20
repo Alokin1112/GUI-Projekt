@@ -1,20 +1,42 @@
 import React, { FunctionComponent, useEffect, useState } from "react";
 import * as ReactDOM from "react-dom";
-import Card from "../shared/Card";
 import CardWithTitle from "../shared/CardWithTitle";
 import { RoutesPath } from "../core/constants/RoutesPath.const";
 import { useTranslation } from "react-i18next";
-import './CustomersReviewWidget.css'
 import Toggle, { ToggleItem } from "../shared/Toggle";
 import { useDispatch, useSelector } from "react-redux";
 import { ReviewsDisplayed, changeReviewsDisplayed } from "../core/store/globalSettingsSlice";
 import StarsDisplay from "../shared/StarsDisplay";
+import styled from "styled-components";
 
 export interface CommentRow {
   author: string,
   review: number,//betwen 1 and 5 only integers,
   comment?: string
 }
+
+const TableComment = styled.td`
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`
+const CustomerTable = styled.table`
+  width: 100%;
+  margin-top: 12px;
+  table-layout: fixed;
+`
+const CustomerTableRow = styled.tr`
+  border-bottom: 1px solid var(--main-color);
+  font-size: 16px;
+  width: 33%;
+
+  &:first-child{
+    border-top: 1px solid var(--main-color);
+  }
+  &>td{
+    padding: 6px 12px;
+  }
+`
 
 export const CustomersReviewWidget: FunctionComponent = () => {
   const { t } = useTranslation();
@@ -49,21 +71,21 @@ export const CustomersReviewWidget: FunctionComponent = () => {
 
               {filteredComments?.length == 0 ?
                 <NoSuitableComments /> :
-                <table className="customers__table">
+                <CustomerTable>
                   <tbody>
                     {
                       filteredComments?.map((item, index) => (
-                        <tr key={index}>
+                        <CustomerTableRow key={index}>
                           <td>{item?.author}</td>
                           <td>
                             <StarsDisplay review={item?.review} />
                           </td>
-                          <td className="customers__table__comment" title={item?.comment}>{item?.comment}</td>
-                        </tr>
+                          <TableComment title={item?.comment}>{item?.comment}</TableComment>
+                        </CustomerTableRow>
                       ))
                     }
                   </tbody>
-                </table>
+                </CustomerTable>
               }
             </>
         }

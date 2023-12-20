@@ -13,5 +13,18 @@
     "unPaid": "Unpaid",
     "notSend": "Not send",
     "returns": "Returns"
+  },
+  "saleChart": {
+    "title": "Sale chart",
+    "showPreviousSerie": "Show previous serie",
+    "presentedValue": "Presented value",
+    "presentedRange": "Presented range",
+    "cashFlow": "Cash flow",
+    "soldItems": "Sold items",
+    "today": "Today",
+    "week": "Week",
+    "month": "Month",
+    "lineChart": "Line chart",
+    "barChart": "Bar chart"
   }
 }

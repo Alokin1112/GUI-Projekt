@@ -13,5 +13,18 @@
     "unPaid": "Nieopłacone",
     "notSend": "Niewysłane",
     "returns": "Zwroty"
+  },
+  "saleChart": {
+    "title": "Wykres sprzedaży",
+    "showPreviousSerie": "Pokaż poprzednią serię",
+    "presentedValue": "Prezentowana miara",
+    "presentedRange": "Prezentowany zakres",
+    "cashFlow": "Obrót",
+    "soldItems": "Sprzedane sztuki",
+    "today": "Dziś",
+    "week": "Tydzień",
+    "month": "Miesiąc",
+    "lineChart": "Wykres liniowy",
+    "barChart": "Wykres słupkowy"
   }
 }

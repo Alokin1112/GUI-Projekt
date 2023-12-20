@@ -4,21 +4,37 @@ import { REDUX_STATE_TOKEN } from './localStorageMiddleware';
 
 export type ReviewsDisplayed = 'all' | 'positive' | 'negative';
 
+export interface ChartSettings {
+  type: 'line' | 'bar',
+  previousSerieVisible: boolean,
+  range: 'day' | 'week' | 'month',
+  presentedValues: 'cashFlow' | 'soldItems'
+}
+
 export interface GlobalSettingsState {
   language: "en" | 'pl',
   theme: "light" | 'dark',
   reviewsDisplayed: ReviewsDisplayed,
+  chart: ChartSettings,
+}
+
+const InitialState: GlobalSettingsState = {
+  language: "en",
+  theme: "light",
+  reviewsDisplayed: 'all',
+  chart: {
+    type: 'line',
+    previousSerieVisible: false,
+    range: 'day',
+    presentedValues: 'cashFlow'
+  }
 }
 
 export const globalSettingsSlice = createSlice({
   name: 'globalSettings',
   initialState: (localStorage.getItem(REDUX_STATE_TOKEN)
-    ? JSON.parse(localStorage.getItem(REDUX_STATE_TOKEN))
-    : {
-      language: "en",
-      theme: "light",
-      reviewsDisplayed: 'all',
-    }) as GlobalSettingsState,
+    ? { ...InitialState, ...(JSON.parse(localStorage.getItem(REDUX_STATE_TOKEN)) || {}) }
+    : InitialState) as GlobalSettingsState,
   reducers: {
     changeLanguage: (state, action) => {
       if (state.language === action.payload) return;
@@ -32,10 +48,13 @@ export const globalSettingsSlice = createSlice({
     changeReviewsDisplayed: (state, action) => {
       if (state.reviewsDisplayed == action.payload) return;
       state.reviewsDisplayed = action.payload;
+    },
+    changeChartSettings: (state, action) => {
+      state.chart = action.payload;
     }
   },
 })
 
-export const { changeLanguage, changeTheme, changeReviewsDisplayed } = globalSettingsSlice.actions
+export const { changeLanguage, changeTheme, changeReviewsDisplayed, changeChartSettings } = globalSettingsSlice.actions
 
 export default globalSettingsSlice.reducer
