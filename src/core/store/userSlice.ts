@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { COMMENTS } from '../constants/CustomerReviews.const';
 import { ORDERS } from '../constants/Orders.const';
+import { generateRandomItems } from '../constants/ChartData.const';
 
 
 export const userSlice = createSlice({
@@ -12,6 +13,7 @@ export const userSlice = createSlice({
         name: 'Sklep 123',
         comments: COMMENTS,
         orders: ORDERS,
+        chartData: generateRandomItems(),
       }
     ],
     selectedShop: 0

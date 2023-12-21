@@ -21,10 +21,14 @@
     "presentedRange": "Prezentowany zakres",
     "cashFlow": "Obrót",
     "soldItems": "Sprzedane sztuki",
+    "previous_cashFlow": "Poprzedni obrót",
+    "previous_soldItems": "Poprzednie sprzedane sztuki",
     "today": "Dziś",
     "week": "Tydzień",
     "month": "Miesiąc",
     "lineChart": "Wykres liniowy",
-    "barChart": "Wykres słupkowy"
+    "barChart": "Wykres słupkowy",
+    "day": "Dzień",
+    "hour": "Godzina"
   }
 }

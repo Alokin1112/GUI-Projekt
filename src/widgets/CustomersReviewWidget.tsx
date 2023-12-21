@@ -15,6 +15,14 @@ export interface CommentRow {
   comment?: string
 }
 
+const ToggleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+`
+
 const TableComment = styled.td`
   white-space: nowrap;
   overflow: hidden;
@@ -67,7 +75,9 @@ export const CustomersReviewWidget: FunctionComponent = () => {
             <NoSuitableComments />
             :
             <>
-              <Toggle title={t('customersReview.title')} items={items} handleChange={handleToggleChange} checked={checkedReviewType} />
+              <ToggleWrapper>
+                <Toggle title={t('customersReview.title')} items={items} handleChange={handleToggleChange} checked={checkedReviewType} />
+              </ToggleWrapper>
 
               {filteredComments?.length == 0 ?
                 <NoSuitableComments /> :

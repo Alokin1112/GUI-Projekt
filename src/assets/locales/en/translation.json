@@ -21,10 +21,14 @@
     "presentedRange": "Presented range",
     "cashFlow": "Cash flow",
     "soldItems": "Sold items",
+    "previous_cashFlow": "Previous cash flow",
+    "previous_soldItems": "Previous sold items",
     "today": "Today",
     "week": "Week",
     "month": "Month",
     "lineChart": "Line chart",
-    "barChart": "Bar chart"
+    "barChart": "Bar chart",
+    "day": "Day",
+    "hour": "Hour"
   }
 }

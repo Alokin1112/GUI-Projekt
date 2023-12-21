@@ -8,6 +8,7 @@ import { changeChartSettings } from '../core/store/globalSettingsSlice'
 import styled from "styled-components";
 import Toggle, { ToggleItem } from "../shared/Toggle";
 import { Switch } from "../shared/Switch";
+import { SaleChart } from "../shared/SaleChart";
 
 const AlignedToRight = styled.div`
   display: flex;
@@ -24,8 +25,6 @@ const RowItems = styled.div`
   justify-content: flex-start;
   gap: 16px;
 `
-
-
 
 export const SaleChartWidget: FunctionComponent = () => {
   const { t } = useTranslation();
@@ -57,11 +56,13 @@ export const SaleChartWidget: FunctionComponent = () => {
           <ChartTypeToggle value={chartSettings?.type} callback={(val) => handleChartSettingsChange('type', val)} />
         </AlignedToRight>
 
+        <SaleChart />
+
         <Switch title={t('saleChart.showPreviousSerie')} checked={chartSettings.previousSerieVisible} handleChange={(val) => handleChartSettingsChange('previousSerieVisible', val)} />
         <RowItems>
           <Toggle title={t('saleChart.presentedValue')} items={presentedValues} handleChange={(val) => handleChartSettingsChange('presentedValues', val)} checked={chartSettings.presentedValues} />
 
-          <Toggle title={t('saleChart.presentedRange')} items={presentedRange} handleChange={(val) => handleChartSettingsChange('presentedRange', val)} checked={chartSettings.range} />
+          <Toggle title={t('saleChart.presentedRange')} items={presentedRange} handleChange={(val) => handleChartSettingsChange('range', val)} checked={chartSettings.range} />
         </RowItems>
 
       </CardWithTitle>
