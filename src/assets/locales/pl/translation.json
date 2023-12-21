@@ -1,3 +1,42 @@
 {
-  "title": "Panel główny"
+  "title": "Panel główny",
+  "customersReview": {
+    "title": "Opinie kupujących",
+    "displayOpinions": "Wyświetl opinie",
+    "all": "Wszystkie",
+    "positive": "Pozytywne",
+    "nagative": "Negatywne",
+    "noSuitableComments": "Brak odpowiadających komentarzy"
+  },
+  "orders": {
+    "title": "Zamówienia",
+    "unPaid": "Nieopłacone",
+    "notSend": "Niewysłane",
+    "returns": "Zwroty"
+  },
+  "saleChart": {
+    "title": "Wykres sprzedaży",
+    "showPreviousSerie": "Pokaż poprzednią serię",
+    "presentedValue": "Prezentowana miara",
+    "presentedRange": "Prezentowany zakres",
+    "cashFlow": "Obrót",
+    "soldItems": "Sprzedane sztuki",
+    "previous_cashFlow": "Poprzedni obrót",
+    "previous_soldItems": "Poprzednie sprzedane sztuki",
+    "today": "Dziś",
+    "week": "Tydzień",
+    "month": "Miesiąc",
+    "lineChart": "Wykres liniowy",
+    "barChart": "Wykres słupkowy",
+    "day": "Dzień",
+    "hour": "Godzina"
+  },
+  "saleTips": {
+    "title": "Porady sprzedażowe",
+    "isodIsBetter": "Pamiętaj! Isod zawsze będzie lepszy niż Usos.",
+    "goodDescription": "Zadbaj o atrakcyjny opis: Opis produktu powinien być jasny, zwięzły i przekonujący. Podkreśl unikalne cechy i korzyści, które sprawią, że Twój produkt wyróżni się spośród innych ofert.",
+    "highQualityPhotos": "Dobrej jakości zdjęcia: Dodaj wysokiej jakości zdjęcia, prezentujące produkt z różnych kątów. Klienci chcą dokładnie widzieć, co kupują, dlatego klarowne obrazy mogą znacznie zwiększyć atrakcyjność Twojej oferty.",
+    "transparency": "Transparentność i uczciwość: Bądź transparentny co do stanu produktu, ewentualnych wad czy ograniczeń. Klienci docenią uczciwość, co zbuduje zaufanie do Twojej marki.",
+    "prices": "Konkurencyjna cena i atrakcyjne warunki dostawy: Zdobądź uwagę klientów poprzez atrakcyjne ceny i elastyczne warunki dostawy. Jeśli Twoja oferta jest konkurencyjna, zwiększa to szanse na sprzedaż."
+  }
 }
