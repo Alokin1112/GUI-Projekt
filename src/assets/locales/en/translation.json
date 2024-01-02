@@ -38,5 +38,15 @@
     "highQualityPhotos": "High-quality photos: Include high-resolution photos showcasing your product from different angles. Customers want a detailed view of what they're buying, so clear images can significantly enhance the appeal of your listing.",
     "transparency": "Transparency and honesty: Be transparent about the product's condition, any potential defects, or limitations. Customers appreciate honesty, which builds trust in your brand.",
     "prices": "Competitive pricing and attractive shipping terms: Capture attention with competitive prices and flexible shipping conditions. If your offer stands out in terms of value, it enhances the chances of making a sale."
+  },
+  "saleQuality": {
+    "title": "Sale quality",
+    "worstAspects": "Worst sales aspects: ",
+    "rating": "Rating: ",
+    "qualityRating": "Summarized quality: ",
+    "qualityCategory": "Your quality category:"
+  },
+  "offerRanking": {
+    "title": "Offers ranking"
   }
 }

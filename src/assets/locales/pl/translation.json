@@ -38,5 +38,12 @@
     "highQualityPhotos": "Dobrej jakości zdjęcia: Dodaj wysokiej jakości zdjęcia, prezentujące produkt z różnych kątów. Klienci chcą dokładnie widzieć, co kupują, dlatego klarowne obrazy mogą znacznie zwiększyć atrakcyjność Twojej oferty.",
     "transparency": "Transparentność i uczciwość: Bądź transparentny co do stanu produktu, ewentualnych wad czy ograniczeń. Klienci docenią uczciwość, co zbuduje zaufanie do Twojej marki.",
     "prices": "Konkurencyjna cena i atrakcyjne warunki dostawy: Zdobądź uwagę klientów poprzez atrakcyjne ceny i elastyczne warunki dostawy. Jeśli Twoja oferta jest konkurencyjna, zwiększa to szanse na sprzedaż."
+  },
+  "saleQuality": {
+    "title": "Jakość sprzedaży",
+    "worstAspects": "Najgorsze aspekty sprzedaży: ",
+    "rating": "Ocena: ",
+    "qualityRating": "Suma ocen jakości: ",
+    "qualityCategory": "Twoja kategoria jakości:"
   }
 }
