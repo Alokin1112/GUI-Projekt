@@ -44,6 +44,18 @@
     "worstAspects": "Najgorsze aspekty sprzedaży: ",
     "rating": "Ocena: ",
     "qualityRating": "Suma ocen jakości: ",
-    "qualityCategory": "Twoja kategoria jakości:"
+    "qualityCategory": "Twoja kategoria jakości:",
+    "noData": "Nie wystarczająca ilość danych aby wyznaczyć jakość sprzedaży"
+  },
+  "offerRanking": {
+    "title": "Ranking ofert",
+    "best": "Najbardziej popularne",
+    "worst": "Najmniej popularne",
+    "toggle": "Filtruj według: ",
+    "amountSold": "Sprzedana ilość: ",
+    "turnover": "Obrót: ",
+    "views": "Ilość unikatowych wyświetleń: ",
+    "noData": "Brak dostępnych danych",
+    "noOffers": "Brak ofert do pokazania"
   }
 }

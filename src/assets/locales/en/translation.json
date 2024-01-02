@@ -44,9 +44,18 @@
     "worstAspects": "Worst sales aspects: ",
     "rating": "Rating: ",
     "qualityRating": "Summarized quality: ",
-    "qualityCategory": "Your quality category:"
+    "qualityCategory": "Your quality category:",
+    "noData": "Not enough data to calculate sales quality"
   },
   "offerRanking": {
-    "title": "Offers ranking"
+    "title": "Offers ranking",
+    "best": "Most popular",
+    "worst": "Least popular",
+    "toggle": "Filter by: ",
+    "amountSold": "Amount sold: ",
+    "turnover": "Turnover: ",
+    "views": "Number of unique views: ",
+    "noData": "No data available",
+    "noOffers": "No offers to show"
   }
 }

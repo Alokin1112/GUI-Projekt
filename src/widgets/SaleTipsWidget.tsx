@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-`
+`;
 
 const CardContent = styled.div`
   width: 100%;
@@ -22,40 +22,42 @@ const CardContent = styled.div`
   padding-left: 16px;
   padding-right: 16px;
   min-height: 80px;
-  color:var(--main-color);
-`
+  color: var(--main-color);
+`;
 const Icon = styled.span`
-  font-size:40px;
-`
+  font-size: 40px;
+`;
 
 export const Tips: string[] = [
-  'isodIsBetter',
-  'goodDescription',
-  'highQualityPhotos',
-  'transparency',
-  'prices',
-]
+  "isodIsBetter",
+  "goodDescription",
+  "highQualityPhotos",
+  "transparency",
+  "prices",
+];
 
 export const SaleTipsWidget: FunctionComponent = () => {
   const { t } = useTranslation();
   return (
     <>
-      <CardWithTitle icon="info" title={t('saleTips.title')} style={{ gridArea: 'saleTips' }} link={'/'}>
+      <CardWithTitle
+        icon="info"
+        title={t("saleTips.title")}
+        style={{ gridArea: "saleTips" }}
+        link={"/"}
+      >
         <Wrapper>
-          {Tips.map((item) =>
+          {Tips.map((item) => (
             <Card>
               <CardContent>
-                <Icon className="material-icons-outlined">
-                  info
-                </Icon>
+                <Icon className="material-icons-outlined">info</Icon>
 
-                {t('saleTips.' + item)}
+                {t("saleTips." + item)}
               </CardContent>
             </Card>
-          )}
+          ))}
         </Wrapper>
       </CardWithTitle>
     </>
-  )
-}
-
+  );
+};
