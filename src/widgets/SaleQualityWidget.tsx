@@ -6,6 +6,7 @@ import { RoutesPath } from "../core/constants/RoutesPath.const";
 import { ASPECTS, Aspect } from "../core/constants/SaleQualityData.const";
 import AspectChart from "../shared/QualityBar";
 import QualityRating from "../shared/QualityRating";
+import styled from "styled-components";
 
 export const SaleQualityWidget: FunctionComponent = () => {
   const { t } = useTranslation();
@@ -16,6 +17,13 @@ export const SaleQualityWidget: FunctionComponent = () => {
 
     return sorted.slice(0, 3);
   }
+
+  const Container = styled.div`
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: center;
+  `;
 
   useEffect(() => {
     setWorstAspects(findWorstAspects(ASPECTS));
@@ -48,13 +56,15 @@ export const SaleQualityWidget: FunctionComponent = () => {
         style={{ gridArea: "saleQuality" }}
         link={"/" + RoutesPath.SALE_QUALITY}
       >
-        {t("saleQuality.worstAspects")}
-        {worstAspects.length != 0 &&
-          worstAspects.map((item, index) => (
-            <div key={index}>
-              <AspectChart aspect={item} />
-            </div>
-          ))}
+        <h4 style={{ textAlign: "center" }}>{t("saleQuality.worstAspects")}</h4>
+        <Container>
+          {worstAspects.length != 0 &&
+            worstAspects.map((item, index) => (
+              <div key={index} style={{ margin: "10px" }}>
+                <AspectChart aspect={item} />
+              </div>
+            ))}
+        </Container>
         <QualityRating aspects={ASPECTS} />
       </CardWithTitle>
     </>

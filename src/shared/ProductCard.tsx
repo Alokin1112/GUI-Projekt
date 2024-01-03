@@ -1,5 +1,4 @@
 import { Product } from "../core/constants/Products.const";
-import img from "../../public/img1.png";
 import { useTranslation } from "react-i18next";
 
 interface MyProps {
@@ -27,7 +26,7 @@ function ProductCard({ product, sort }: MyProps) {
         {product.name}
       </h2>
       <img
-        src={img}
+        src={`/public${product.img}`}
         alt={`Product: ${product.name}`}
         height={100}
         width={100}

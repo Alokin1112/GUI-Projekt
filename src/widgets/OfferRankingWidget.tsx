@@ -15,6 +15,12 @@ const ToggleWrapper = styled.div`
   width: 100%;
 `;
 
+const ProductContainer = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+`;
+
 export const OfferRankingWidget: FunctionComponent = () => {
   const { t } = useTranslation();
   const [sort, setSort] = useState("best");
@@ -78,10 +84,13 @@ export const OfferRankingWidget: FunctionComponent = () => {
               title={t("offerRanking.toggle")}
               items={type}
               handleChange={handleToggleChange}
+              checked={sort}
             />
-            {currentProducts.map((product) => (
-              <ProductCard product={product} sort={sort} />
-            ))}
+            <ProductContainer>
+              {currentProducts.map((product) => (
+                <ProductCard product={product} sort={sort} />
+              ))}
+            </ProductContainer>
           </ToggleWrapper>
         </CardWithTitle>
       </>

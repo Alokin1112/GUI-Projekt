@@ -15,13 +15,9 @@ function QualityRating({ aspects }: { aspects: Aspect[] }) {
 
   const CenteredDiv = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: auto;
-    max-width: 400px;
-    padding: 20px;
   `;
 
   const totalRating = aspects.reduce((sum, aspect) => sum + aspect.rating, 0);
@@ -29,7 +25,7 @@ function QualityRating({ aspects }: { aspects: Aspect[] }) {
 
   return (
     <CenteredDiv>
-      <p>
+      <p style={{ marginRight: "auto", marginLeft: "10px" }}>
         {t("saleQuality.qualityRating")}
         {`${totalRating} / ${maxRating}`}
       </p>
