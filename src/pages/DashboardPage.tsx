@@ -13,12 +13,17 @@ const DashboardWrapper = styled.div`
   width: 100%;
   margin: 16px auto;
   gap: 8px;
-  grid-template-areas:
-    'orders orders orders orders saleQuality saleQuality'
+  grid-template-columns: 1fr;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(6,1fr) ;
+    grid-template-areas:
+    'orders orders orders orders orders orders'
+    'saleTips saleTips saleQuality saleQuality saleQuality saleQuality'
     'customerReview customerReview customerReview customerReview customerReview customerReview'
-    'saleTips saleTips offerRanking offerRanking offerRanking offerRanking'
+    'offerRanking offerRanking offerRanking offerRanking offerRanking offerRanking'
     'saleChart saleChart saleChart saleChart saleChart saleChart'
   ;
+  }
 `
 
 export const DashboardPage: FunctionComponent = () => {

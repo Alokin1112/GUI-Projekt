@@ -16,8 +16,10 @@ const ToggleWrapper = styled.div`
 `;
 
 const ProductContainer = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(5,1fr) ;
+  gap:16px;
+  width:100%;
   overflow-x: auto;
 `;
 

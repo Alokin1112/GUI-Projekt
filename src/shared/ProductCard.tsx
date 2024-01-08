@@ -1,3 +1,4 @@
+import { styled } from "styled-components";
 import { Product } from "../core/constants/Products.const";
 import { useTranslation } from "react-i18next";
 
@@ -6,22 +7,23 @@ interface MyProps {
   sort: string;
 }
 
+const Wrapper = styled.div`
+  border: 1px solid var(--main-color);
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  min-width: 232px;
+`;
+
 function ProductCard({ product, sort }: MyProps) {
   const { t } = useTranslation();
 
   return (
-    <div
-      style={{
-        border: "1px solid var(--main-color)",
-        padding: "10px",
-        marginTop: "10px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        minWidth: "232px",
-      }}
-    >
+    <Wrapper>
       <h2 style={{ color: "var(--main-color)", fontSize: "19px" }}>
         {product.name}
       </h2>
@@ -34,28 +36,28 @@ function ProductCard({ product, sort }: MyProps) {
 
       {sort === "best" && (
         <>
-          <p>
+          <div>
             {t("offerRanking.amountSold")} {product.amountSold}
-          </p>
-          <p>
+          </div>
+          <div>
             {t("offerRanking.turnover")}
             {product.turnover ?? t("offerRanking.noData")} zł
-          </p>
+          </div>
         </>
       )}
 
       {sort === "worst" && (
         <>
-          <p>
+          <div>
             {t("offerRanking.amountSold")} {product.amountSold}
-          </p>
-          <p>
+          </div>
+          <div>
             {t("offerRanking.views")}
             {product.views ?? t("offerRanking.noData")}
-          </p>
+          </div>
         </>
       )}
-    </div>
+    </Wrapper>
   );
 }
 
