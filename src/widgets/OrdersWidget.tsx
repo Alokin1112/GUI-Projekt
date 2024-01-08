@@ -17,21 +17,27 @@ export interface OrdersWidgetItem {
 const Container = styled.div`
   margin: -8px -12px;
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
   width: calc(100% + 24px);
   align-items: center;
   justify-content: space-between;
 `
 const OrderItem = styled.div`
   width: 100%;
-  border-right: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5px 24px;
+  @media (min-width: 600px) {
+    border-right: 1px solid var(--main-color);
+  }
   &:last-child {
-    border-right: none;
+    border:none;
   }
 `
 const OrderItemLink = styled(Link)`
@@ -75,7 +81,7 @@ export const OrdersWidget: FunctionComponent = () => {
   const orders = useSelector((state: any) => state?.user.shops[state?.user?.selectedShop].orders);
   return (
     <>
-      <CardWithTitle icon="local_shipping" title={t('orders.title')} style={{ gridArea: 'orders' }} link={'/' + RoutesPath.ORDERS_PAGE}>
+      <CardWithTitle icon="local_shipping" title={t('orders.title')} style={{ gridArea: 'orders', height: '100%' }} link={'/' + RoutesPath.ORDERS_PAGE}>
         <Container>
           {OrdersWidgetItems.map((item, index) => (
             <OrderItem key={index}>

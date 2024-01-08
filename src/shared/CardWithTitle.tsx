@@ -4,6 +4,12 @@ import Card from "./Card";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+const CardWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`
+
 const CardItemHeader = styled(Link)`
   display: flex;
   flex-direction: row;
@@ -33,7 +39,7 @@ const CardItemContent = styled.div`
 function CardWithTitle(props) {
   return (
     <>
-      <div style={props?.style}>
+      <CardWrapper style={props?.style}>
         <CardItemHeader to={props.link}>
           <CardItemHeaderLeft>
             {
@@ -53,12 +59,12 @@ function CardWithTitle(props) {
           }
 
         </CardItemHeader>
-        <Card style={props?.cardStyles || {}}>
+        <Card style={{ height: '100%', ...(props?.cardStyles || {}) }}>
           <CardItemContent>
             {props?.children}
           </CardItemContent>
         </Card>
-      </div>
+      </CardWrapper>
     </>
   )
 }

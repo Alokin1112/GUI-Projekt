@@ -21,8 +21,12 @@ export const SaleQualityWidget: FunctionComponent = () => {
   const Container = styled.div`
     display: flex;
     flex-wrap: nowrap;
+    flex-direction: column ;
     overflow-x: auto;
     justify-content: center;
+    @media (min-width: 600px) {
+      flex-direction: row ;
+    }
   `;
 
   useEffect(() => {
@@ -53,7 +57,7 @@ export const SaleQualityWidget: FunctionComponent = () => {
       <CardWithTitle
         icon="query_stats"
         title={t("saleQuality.title")}
-        style={{ gridArea: "saleQuality" }}
+        style={{ gridArea: "saleQuality", height: '100%' }}
         link={"/" + RoutesPath.SALE_QUALITY}
       >
         <h4 style={{ textAlign: "center" }}>{t("saleQuality.worstAspects")}</h4>

@@ -17,10 +17,13 @@ const ToggleWrapper = styled.div`
 
 const ProductContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(5,1fr) ;
+  grid-template-columns: repeat(1,1fr) ;
   gap:16px;
   width:100%;
   overflow-x: auto;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(5,1fr) ;
+  }
 `;
 
 export const OfferRankingWidget: FunctionComponent = () => {
