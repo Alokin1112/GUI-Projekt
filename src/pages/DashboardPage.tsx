@@ -9,15 +9,16 @@ import { SaleTipsWidget } from "../widgets/SaleTipsWidget";
 import styled from "styled-components";
 
 const DashboardWrapper = styled.div`
-  display: grid;
+  display: flex;
   width: 100%;
   margin: 16px auto;
   gap: 8px;
-  grid-template-columns: 1fr;
-  @media (min-width: 768px) {
+  flex-flow:column nowrap;
+  @media (min-width: 1300px) {
+    display: grid;
     grid-template-columns: repeat(6,1fr) ;
     grid-template-areas:
-    'orders orders orders orders orders orders'
+    'saleTips saleTips orders orders orders orders'
     'saleTips saleTips saleQuality saleQuality saleQuality saleQuality'
     'customerReview customerReview customerReview customerReview customerReview customerReview'
     'offerRanking offerRanking offerRanking offerRanking offerRanking offerRanking'
@@ -34,8 +35,8 @@ export const DashboardPage: FunctionComponent = () => {
       <SaleQualityWidget />
       <SaleTipsWidget />
       <CustomersReviewWidget />
-      <SaleChartWidget />
       <OfferRankingWidget />
+      <SaleChartWidget />
     </DashboardWrapper>
   )
 }

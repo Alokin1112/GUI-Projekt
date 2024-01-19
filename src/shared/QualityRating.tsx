@@ -20,16 +20,21 @@ function QualityRating({ aspects }: { aspects: Aspect[] }) {
     align-items: center;
   `;
 
+  const Text = styled.p`
+    padding:0 ;
+    margin: 0;
+  `
+
   const totalRating = aspects.reduce((sum, aspect) => sum + aspect.rating, 0);
   const maxRating = aspects.reduce((sum, aspect) => sum + aspect.maxRating, 0);
 
   return (
     <CenteredDiv>
-      <p style={{ marginRight: "auto", marginLeft: "10px" }}>
+      <Text style={{ marginRight: "auto", marginLeft: "10px" }}>
         {t("saleQuality.qualityRating")}
         {`${totalRating} / ${maxRating}`}
-      </p>
-      <p>{t("saleQuality.qualityCategory")}</p>
+      </Text>
+      <Text>{t("saleQuality.qualityCategory")}</Text>
       <StarsDisplay review={calculateQualityCategory(totalRating, maxRating)} />
     </CenteredDiv>
   );

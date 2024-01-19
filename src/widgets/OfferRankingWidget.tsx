@@ -22,6 +22,9 @@ const ProductContainer = styled.div`
   gap: 16px;
   width: 100%;
   overflow-x: auto;
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(5,1fr) ;
+  }
 `;
 
 export const OfferRankingWidget: FunctionComponent = () => {
