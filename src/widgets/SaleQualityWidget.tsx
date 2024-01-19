@@ -7,10 +7,14 @@ import { ASPECTS, Aspect } from "../core/constants/SaleQualityData.const";
 import AspectChart from "../shared/QualityBar";
 import QualityRating from "../shared/QualityRating";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 export const SaleQualityWidget: FunctionComponent = () => {
   const { t } = useTranslation();
   const [worstAspects, setWorstAspects] = useState([]);
+  const aspects = useSelector(
+    (state: any) => state?.user.shops[state?.user?.selectedShop].aspects
+  );
 
   function findWorstAspects(data: Aspect[]): Aspect[] {
     const sorted = [...data].sort((a, b) => a.rating - b.rating);
@@ -30,25 +34,32 @@ export const SaleQualityWidget: FunctionComponent = () => {
   `;
 
   useEffect(() => {
-    setWorstAspects(findWorstAspects(ASPECTS));
-  }, []);
+    setWorstAspects(findWorstAspects(aspects));
+  }, [aspects]);
 
-  if (worstAspects.length === 0) {
+  if (worstAspects.length == 0) {
     return (
-      <h2
-        style={{
-          width: "100%",
-          height: "60px",
-          textAlign: "center",
-          margin: 0,
-          padding: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+      <CardWithTitle
+        icon="query_stats"
+        title={t("saleQuality.title")}
+        style={{ gridArea: "saleQuality" }}
+        link={"/" + RoutesPath.SALE_QUALITY}
       >
-        {t("saleQuality.noData")}
-      </h2>
+        <h2
+          style={{
+            width: "100%",
+            height: "60px",
+            textAlign: "center",
+            margin: 0,
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {t("saleQuality.noData")}
+        </h2>
+      </CardWithTitle>
     );
   }
 

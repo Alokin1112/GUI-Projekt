@@ -6,6 +6,7 @@ import Toggle, { ToggleItem } from "../shared/Toggle";
 import styled from "styled-components";
 import { PRODUCTS, Product } from "../core/constants/Products.const";
 import ProductCard from "../shared/ProductCard";
+import { useSelector } from "react-redux";
 
 const ToggleWrapper = styled.div`
   display: flex;
@@ -17,9 +18,9 @@ const ToggleWrapper = styled.div`
 
 const ProductContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(1,1fr) ;
-  gap:16px;
-  width:100%;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  width: 100%;
   overflow-x: auto;
   @media (min-width: 600px) {
     grid-template-columns: repeat(5,1fr) ;
@@ -30,6 +31,9 @@ export const OfferRankingWidget: FunctionComponent = () => {
   const { t } = useTranslation();
   const [sort, setSort] = useState("best");
   const [currentProducts, setCurrentProduct] = useState([]);
+  const products = useSelector(
+    (state: any) => state?.user.shops[state?.user?.selectedShop].products
+  );
 
   const handleToggleChange = (val) => {
     setSort(val);
@@ -56,25 +60,31 @@ export const OfferRankingWidget: FunctionComponent = () => {
   };
 
   useEffect(() => {
-    setCurrentProduct(filterAndSortProducts(PRODUCTS));
-  }, []);
+    setCurrentProduct(filterAndSortProducts(products));
+  }, [currentProducts]);
 
-  if (currentProducts.length === 0) {
+  if (currentProducts.length == 0) {
     return (
-      <h2
-        style={{
-          width: "100%",
-          height: "60px",
-          textAlign: "center",
-          margin: 0,
-          padding: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+      <CardWithTitle
+        icon=""
+        title={t("offerRanking.title")}
+        style={{ gridArea: "offerRanking" }}
       >
-        {t("offerRanking.noOffers")}
-      </h2>
+        <h2
+          style={{
+            width: "100%",
+            height: "60px",
+            textAlign: "center",
+            margin: 0,
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {t("offerRanking.noOffers")}
+        </h2>
+      </CardWithTitle>
     );
   } else {
     return (
