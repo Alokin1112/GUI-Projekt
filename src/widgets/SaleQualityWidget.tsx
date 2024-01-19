@@ -7,10 +7,14 @@ import { ASPECTS, Aspect } from "../core/constants/SaleQualityData.const";
 import AspectChart from "../shared/QualityBar";
 import QualityRating from "../shared/QualityRating";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 export const SaleQualityWidget: FunctionComponent = () => {
   const { t } = useTranslation();
   const [worstAspects, setWorstAspects] = useState([]);
+  const aspects = useSelector(
+    (state: any) => state?.user.shops[state?.user?.selectedShop].aspects
+  );
 
   function findWorstAspects(data: Aspect[]): Aspect[] {
     const sorted = [...data].sort((a, b) => a.rating - b.rating);
@@ -26,7 +30,7 @@ export const SaleQualityWidget: FunctionComponent = () => {
   `;
 
   useEffect(() => {
-    setWorstAspects(findWorstAspects(ASPECTS));
+    setWorstAspects(findWorstAspects(aspects));
   }, []);
 
   if (worstAspects.length === 0) {

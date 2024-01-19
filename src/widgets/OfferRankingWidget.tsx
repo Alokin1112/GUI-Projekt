@@ -6,6 +6,7 @@ import Toggle, { ToggleItem } from "../shared/Toggle";
 import styled from "styled-components";
 import { PRODUCTS, Product } from "../core/constants/Products.const";
 import ProductCard from "../shared/ProductCard";
+import { useSelector } from "react-redux";
 
 const ToggleWrapper = styled.div`
   display: flex;
@@ -17,9 +18,9 @@ const ToggleWrapper = styled.div`
 
 const ProductContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(5,1fr) ;
-  gap:16px;
-  width:100%;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  width: 100%;
   overflow-x: auto;
 `;
 
@@ -27,6 +28,9 @@ export const OfferRankingWidget: FunctionComponent = () => {
   const { t } = useTranslation();
   const [sort, setSort] = useState("best");
   const [currentProducts, setCurrentProduct] = useState([]);
+  const products = useSelector(
+    (state: any) => state?.user.shops[state?.user?.selectedShop].products
+  );
 
   const handleToggleChange = (val) => {
     setSort(val);
@@ -53,7 +57,7 @@ export const OfferRankingWidget: FunctionComponent = () => {
   };
 
   useEffect(() => {
-    setCurrentProduct(filterAndSortProducts(PRODUCTS));
+    setCurrentProduct(filterAndSortProducts(products));
   }, []);
 
   if (currentProducts.length === 0) {

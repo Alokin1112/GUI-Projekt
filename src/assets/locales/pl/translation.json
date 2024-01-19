@@ -57,5 +57,13 @@
     "views": "Ilość unikatowych wyświetleń: ",
     "noData": "Brak dostępnych danych",
     "noOffers": "Brak ofert do pokazania"
+  },
+  "login": {
+    "title": "Zaloguj się",
+    "username": "nazwa użytkownika",
+    "password": "hasło",
+    "remember": "Zapamiętaj mnie",
+    "submit": "Zaloguj",
+    "register": "Zarejestruj się"
   }
 }

@@ -57,5 +57,13 @@
     "views": "Number of unique views: ",
     "noData": "No data available",
     "noOffers": "No offers to show"
+  },
+  "login": {
+    "title": "Log in",
+    "username": "username",
+    "password": "password",
+    "remember": "Remember me",
+    "submit": "Login",
+    "register": "Register"
   }
 }

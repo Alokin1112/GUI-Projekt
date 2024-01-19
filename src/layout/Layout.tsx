@@ -5,6 +5,8 @@ import ukFlag from "../assets/images/flag-united-kingdom.png";
 import { useSelector, useDispatch } from "react-redux";
 import { changeLanguage, changeTheme } from "../core/store/globalSettingsSlice";
 import { useTranslation } from "react-i18next";
+import { setUser } from "../core/store/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Layout: FunctionComponent<{ children: any }> = ({ children }) => {
   const { language, theme } = useSelector((state: any) => ({
@@ -13,6 +15,11 @@ const Layout: FunctionComponent<{ children: any }> = ({ children }) => {
   }));
   const dispatch = useDispatch();
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const logout = () => {
+    dispatch(setUser(""));
+    navigate("/login");
+  };
 
   return (
     <>
@@ -84,7 +91,10 @@ const Layout: FunctionComponent<{ children: any }> = ({ children }) => {
                 <img className="country__flag__image" src={plFlag} />
               </label>
             </div>
-            <button className="btn btn-outline-secondary gap-2 d-flex">
+            <button
+              className="btn btn-outline-secondary gap-2 d-flex"
+              onClick={logout}
+            >
               <span className="material-icons">logout</span>
               Logout
             </button>
