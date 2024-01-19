@@ -15,6 +15,7 @@ import { CustomersReviewPage } from "./pages/CustomersReview";
 import { SaleQualityPage } from "./pages/SaleQualityPage";
 import { OrdersPage } from "./pages/OrdersPage";
 import { useSelector } from "react-redux";
+import { AddShop } from "./pages/AddShopPage";
 
 function MustBeAuthorized({ children }) {
   const user = useSelector((state: any) => state.user);
@@ -56,6 +57,10 @@ export const PageRouting = createBrowserRouter([
       {
         path: `/${RoutesPath.ORDERS_PAGE}`,
         element: <OrdersPage />,
+      },
+      {
+        path: `/${RoutesPath.ADD_SHOP}`,
+        element: <AddShop />,
       },
     ],
   },

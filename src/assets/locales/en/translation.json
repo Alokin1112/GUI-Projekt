@@ -65,5 +65,10 @@
     "remember": "Remember me",
     "submit": "Login",
     "register": "Register"
+  },
+  "add": {
+    "title": "Add new shop",
+    "placeholder": "Shop name",
+    "submit": "Save"
   }
 }

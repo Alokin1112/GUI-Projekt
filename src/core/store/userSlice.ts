@@ -28,9 +28,15 @@ export const userSlice = createSlice({
     removeUser: (state) => {
       state.name = null;
     },
+    addStore: (state, action) => {
+      state.shops.push(action.payload);
+    },
+    setSelected: (state, action) => {
+      state.selectedShop = action.payload;
+    },
   },
 });
 
-export const { setUser, removeUser } = userSlice.actions;
+export const { setUser, removeUser, addStore, setSelected } = userSlice.actions;
 
 export default userSlice.reducer;

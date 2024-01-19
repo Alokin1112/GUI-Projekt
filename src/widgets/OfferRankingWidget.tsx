@@ -58,24 +58,30 @@ export const OfferRankingWidget: FunctionComponent = () => {
 
   useEffect(() => {
     setCurrentProduct(filterAndSortProducts(products));
-  }, []);
+  }, [currentProducts]);
 
-  if (currentProducts.length === 0) {
+  if (currentProducts.length == 0) {
     return (
-      <h2
-        style={{
-          width: "100%",
-          height: "60px",
-          textAlign: "center",
-          margin: 0,
-          padding: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
+      <CardWithTitle
+        icon=""
+        title={t("offerRanking.title")}
+        style={{ gridArea: "offerRanking" }}
       >
-        {t("offerRanking.noOffers")}
-      </h2>
+        <h2
+          style={{
+            width: "100%",
+            height: "60px",
+            textAlign: "center",
+            margin: 0,
+            padding: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          {t("offerRanking.noOffers")}
+        </h2>
+      </CardWithTitle>
     );
   } else {
     return (
