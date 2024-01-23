@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div`
   display: grid;
   place-items: center;
-  height: 100vh;
+  max-height: 100vh;
 `;
 
 const Form = styled.form`
@@ -38,12 +38,13 @@ export const LoginPage: FunctionComponent = () => {
   };
 
   return (
-    // TODO - tutaj te błędne dane logowania trzeba ostylować
     <Wrapper>
       <CardWithTitle icon="" title={t("login.title")}>
         <div style={{ display: "grid", placeItems: "center" }}>
           <Form onSubmit={onLogin}>
-            {isError && <div>Błędne dane logowania</div>}
+            {isError && (
+              <div className="mb-2 text-danger">Błędne dane logowania</div>
+            )}
             <div className="input-group mb-3">
               <input
                 type="text"
@@ -75,14 +76,14 @@ export const LoginPage: FunctionComponent = () => {
             </div>
             <button
               className="btn btn-success"
-              style={{ marginTop: "4px", width: "50%" }}
+              style={{ marginTop: "4px", width: "75%" }}
             >
               {t("login.submit")}
             </button>
           </Form>
           <button
             className="btn btn-success"
-            style={{ marginTop: "4px", width: "50%" }}
+            style={{ marginTop: "4px", width: "75%" }}
           >
             {t("login.register")}
           </button>

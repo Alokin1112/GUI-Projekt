@@ -12,7 +12,8 @@
     "title": "Orders",
     "unPaid": "Unpaid",
     "notSend": "Not send",
-    "returns": "Returns"
+    "returns": "Returns",
+    "noData": "No orders, consider buying advertisements package to increse amount of orders"
   },
   "saleChart": {
     "title": "Sale chart",
@@ -45,7 +46,11 @@
     "rating": "Rating: ",
     "qualityRating": "Summarized quality: ",
     "qualityCategory": "Your quality category:",
-    "noData": "Not enough data to calculate sales quality"
+    "noData": "Not enough data to calculate sales quality",
+    "deliveryTime": "Delivery time",
+    "packagingQuality": "Packaging quality",
+    "serviceQuality": "Service quality",
+    "complianceWithDescription": "Compliance with description"
   },
   "offerRanking": {
     "title": "Offers ranking",

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div`
   display: grid;
   place-items: center;
-  height: 100vh;
+  height: 10vh;
 `;
 
 const Form = styled.form`

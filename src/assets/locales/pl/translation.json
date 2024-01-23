@@ -12,7 +12,8 @@
     "title": "Zamówienia",
     "unPaid": "Nieopłacone",
     "notSend": "Niewysłane",
-    "returns": "Zwroty"
+    "returns": "Zwroty",
+    "noData": "Brak zamówień, aby zwiększyć ilość zamówień wykup pakiet reklam"
   },
   "saleChart": {
     "title": "Wykres sprzedaży",
@@ -45,7 +46,11 @@
     "rating": "Ocena: ",
     "qualityRating": "Suma ocen jakości: ",
     "qualityCategory": "Twoja kategoria jakości:",
-    "noData": "Nie wystarczająca ilość danych aby wyznaczyć jakość sprzedaży"
+    "noData": "Nie wystarczająca ilość danych aby wyznaczyć jakość sprzedaży",
+    "deliveryTime": "Czas dostawy",
+    "packagingQuality": "Jakość pakowania",
+    "serviceQuality": "Jakość obsługi",
+    "complianceWithDescription": "Zgodność z opisem"
   },
   "offerRanking": {
     "title": "Ranking ofert",

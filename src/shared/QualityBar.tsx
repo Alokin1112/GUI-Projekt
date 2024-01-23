@@ -27,7 +27,7 @@ function AspectChart({ aspect }: { aspect: Aspect }) {
 
   return (
     <Wrapper>
-      <Heading>{aspect.name}</Heading>
+      <Heading>{t(aspect.name)}</Heading>
       <PieChart width={200} height={120}>
         <Pie
           data={data}

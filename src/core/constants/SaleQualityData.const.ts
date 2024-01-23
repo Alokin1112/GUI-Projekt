@@ -5,10 +5,10 @@ export interface Aspect {
 }
 
 export const ASPECTS: Aspect[] = [
-  { name: "Delivery time", rating: 5, maxRating: 10 },
-  { name: "Packaging quality", rating: 7, maxRating: 10 },
-  { name: "Service quality", rating: 6, maxRating: 10 },
-  { name: "Compliance with description", rating: 9, maxRating: 10 },
+  { name: "saleQuality.deliveryTime", rating: 5, maxRating: 10 },
+  { name: "saleQuality.packagingQuality", rating: 7, maxRating: 10 },
+  { name: "saleQuality.serviceQuality", rating: 6, maxRating: 10 },
+  { name: "saleQuality.complianceWithDescription", rating: 9, maxRating: 10 },
 ];
 
 export interface QualityRating {

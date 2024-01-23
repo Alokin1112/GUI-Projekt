@@ -23,7 +23,7 @@ const ProductContainer = styled.div`
   width: 100%;
   overflow-x: auto;
   @media (min-width: 600px) {
-    grid-template-columns: repeat(5,1fr) ;
+    grid-template-columns: repeat(5, 1fr);
   }
 `;
 
@@ -66,7 +66,7 @@ export const OfferRankingWidget: FunctionComponent = () => {
   if (currentProducts.length == 0) {
     return (
       <CardWithTitle
-        icon=""
+        icon="analytics"
         title={t("offerRanking.title")}
         style={{ gridArea: "offerRanking" }}
       >
@@ -90,7 +90,7 @@ export const OfferRankingWidget: FunctionComponent = () => {
     return (
       <>
         <CardWithTitle
-          icon=""
+          icon="analytics"
           title={t("offerRanking.title")}
           style={{ gridArea: "offerRanking" }}
         >
