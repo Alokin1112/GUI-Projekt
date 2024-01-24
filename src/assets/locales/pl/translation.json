@@ -1,5 +1,6 @@
 {
   "title": "Panel główny",
+  "logout": "Wyloguj",
   "customersReview": {
     "title": "Opinie kupujących",
     "displayOpinions": "Wyświetl opinie",
@@ -65,8 +66,8 @@
   },
   "login": {
     "title": "Zaloguj się",
-    "username": "nazwa użytkownika",
-    "password": "hasło",
+    "username": "Nazwa użytkownika",
+    "password": "Hasło",
     "remember": "Zapamiętaj mnie",
     "submit": "Zaloguj",
     "register": "Zarejestruj się"

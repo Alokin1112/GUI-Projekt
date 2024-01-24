@@ -10,7 +10,7 @@ const CardWrapper = styled.div`
   height: 100%;
 `
 
-const CardItemHeader = styled(Link)`
+const CardItemHeaderLink = styled(Link)`
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -26,6 +26,19 @@ const CardItemHeader = styled(Link)`
   color: var(--active-link-color);
 }
 `
+const CardItemHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: var(--main-color);
+  color: white;
+  padding: 8px 12px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+`
 const CardItemHeaderLeft = styled.div`
   display: flex;
   align-items: center;
@@ -40,25 +53,36 @@ function CardWithTitle(props) {
   return (
     <>
       <CardWrapper style={props?.style}>
-        <CardItemHeader to={props.link}>
-          <CardItemHeaderLeft>
-            {
-              props?.icon && <span className="material-icons">
-                {props?.icon}
+        {
+          props?.link ?
+            <CardItemHeaderLink to={props.link}>
+              <CardItemHeaderLeft>
+                {
+                  props?.icon && <span className="material-icons">
+                    {props?.icon}
+                  </span>
+                }
+
+                {props?.title || ''}
+              </CardItemHeaderLeft>
+
+              <span className="material-icons">
+                open_in_new
               </span>
-            }
+            </CardItemHeaderLink>
+            : <CardItemHeader>
+              <CardItemHeaderLeft>
+                {
+                  props?.icon && <span className="material-icons">
+                    {props?.icon}
+                  </span>
+                }
 
-            {props?.title || ''}
-          </CardItemHeaderLeft>
+                {props?.title || ''}
+              </CardItemHeaderLeft>
+            </CardItemHeader>
+        }
 
-          {
-            props?.link &&
-            <span className="material-icons">
-              open_in_new
-            </span>
-          }
-
-        </CardItemHeader>
         <Card style={{ height: '100%', ...(props?.cardStyles || {}) }}>
           <CardItemContent>
             {props?.children}

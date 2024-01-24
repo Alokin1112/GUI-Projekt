@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   display: grid;
   place-items: center;
   max-height: 100vh;
+  width: 100vw;
 `;
 
 const Form = styled.form`

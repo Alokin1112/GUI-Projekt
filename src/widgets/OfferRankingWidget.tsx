@@ -30,14 +30,14 @@ const ProductContainer = styled.div`
 export const OfferRankingWidget: FunctionComponent = () => {
   const { t } = useTranslation();
   const [sort, setSort] = useState("best");
-  const [currentProducts, setCurrentProduct] = useState([]);
   const products = useSelector(
     (state: any) => state?.user.shops[state?.user?.selectedShop].products
   );
+  const [currentProducts, setCurrentProduct] = useState(filterAndSortProducts(products, sort));
 
   const handleToggleChange = (val) => {
     setSort(val);
-    setCurrentProduct(filterAndSortProducts(PRODUCTS));
+    setCurrentProduct(filterAndSortProducts(PRODUCTS, val));
   };
 
   const type: ToggleItem[] = [
@@ -45,23 +45,9 @@ export const OfferRankingWidget: FunctionComponent = () => {
     { id: "worst", title: t("offerRanking.worst") },
   ];
 
-  const filterAndSortProducts = (products: Product[]): Product[] => {
-    const sortedProducts = [...products];
-
-    sortedProducts.sort((a, b) => {
-      if (sort === "best") {
-        return a.amountSold - b.amountSold;
-      } else {
-        return b.amountSold - a.amountSold;
-      }
-    });
-
-    return sortedProducts.slice(0, 5);
-  };
-
   useEffect(() => {
-    setCurrentProduct(filterAndSortProducts(products));
-  }, [currentProducts]);
+    setCurrentProduct(filterAndSortProducts(products, sort));
+  }, [products]);
 
   if (currentProducts.length == 0) {
     return (
@@ -102,8 +88,8 @@ export const OfferRankingWidget: FunctionComponent = () => {
               checked={sort}
             />
             <ProductContainer>
-              {currentProducts.map((product) => (
-                <ProductCard product={product} sort={sort} />
+              {currentProducts.map((product, index) => (
+                <ProductCard product={product} sort={sort} key={index} />
               ))}
             </ProductContainer>
           </ToggleWrapper>
@@ -111,4 +97,19 @@ export const OfferRankingWidget: FunctionComponent = () => {
       </>
     );
   }
+};
+
+
+const filterAndSortProducts = (products: Product[], sort: string): Product[] => {
+  const sortedProducts = [...products];
+
+  sortedProducts.sort((a, b) => {
+    if (sort === "best") {
+      return a.amountSold - b.amountSold;
+    } else {
+      return b.amountSold - a.amountSold;
+    }
+  });
+
+  return sortedProducts.slice(0, 5);
 };

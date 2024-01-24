@@ -8,20 +8,29 @@ import { useTranslation } from "react-i18next";
 import { setUser, setSelected } from "../core/store/userSlice";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { styled } from "styled-components";
+
+const ShopList = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-direction: row;
+`
+
 
 const Layout: FunctionComponent<{ children: any }> = ({ children }) => {
   const { language, theme } = useSelector((state: any) => ({
     language: state?.globalSettings?.language,
     theme: state?.globalSettings?.theme,
   }));
+
   const dispatch = useDispatch();
   const currentShop = useSelector(
     (state: any) => state?.user.shops[state?.user?.selectedShop].name
   );
   const selectedShop = useSelector((state: any) => state?.user?.selectedShop);
   let shopList = useSelector((state: any) => state?.user.shops);
-  console.log(selectedShop);
-  console.log(useSelector((state: any) => state?.user.shops));
 
   const { t } = useTranslation();
   const navigate = useNavigate();
@@ -45,40 +54,40 @@ const Layout: FunctionComponent<{ children: any }> = ({ children }) => {
             </Link>
           </div>
           <div className="d-flex gap-4">
-            <div className="dropdown">
-              <button
-                className="btn btn-outline-secondary dropdown-toggle"
-                type="button"
-                data-bs-toggle="dropdown"
-              >
-                {currentShop}
-              </button>
-              <ul className="dropdown-menu">
-                {shopList.length !== 0 &&
-                  shopList.map((shop, index) => (
+            <ShopList>
+              <div className="dropdown">
+                <button
+                  className="btn btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                >
+                  {currentShop}
+                </button>
+                <ul className="dropdown-menu">
+                  {shopList.length !== 0 &&
+                    shopList.map((shop, index) => (
+                      <li key={index}>
+                        <button
+                          className="dropdown-item"
+                          onClick={() => {
+                            dispatch(setSelected(index));
+                          }}
+                        >
+                          {shop.name}
+                        </button>
+                      </li>
+                    ))}
+                  {shopList.length === 0 && (
                     <li>
-                      <button
-                        className="dropdown-item"
-                        onClick={() => {
-                          console.log(selectedShop);
-                          dispatch(setSelected(index));
-                          console.log(selectedShop);
-                        }}
-                      >
-                        {shop.name}
-                      </button>
+                      <span className="dropdown-item">No more shops</span>
                     </li>
-                  ))}
-                {shopList.length === 0 && (
-                  <li>
-                    <span className="dropdown-item">No more shops</span>
-                  </li>
-                )}
-              </ul>
-              <button type="button" className="btn btn-light" onClick={addShop}>
+                  )}
+                </ul>
+              </div>
+              <button type="button" className="btn btn-outline-secondary btn-sm" style={{ 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'center' }} onClick={addShop}>
                 <span className="material-symbols-outlined">add</span>
               </button>
-            </div>
+            </ShopList>
             <div className="btn-group" role="group">
               <input
                 type="radio"
@@ -144,11 +153,11 @@ const Layout: FunctionComponent<{ children: any }> = ({ children }) => {
               onClick={logout}
             >
               <span className="material-icons">logout</span>
-              Logout
+              {t("logout")}
             </button>
           </div>
         </div>
-      </nav>
+      </nav >
 
       <div className="layout__wrapper">{children}</div>
     </>

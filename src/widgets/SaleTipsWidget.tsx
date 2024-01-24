@@ -47,8 +47,8 @@ export const SaleTipsWidget: FunctionComponent = () => {
         link={"/"}
       >
         <Wrapper>
-          {Tips.map((item) => (
-            <Card>
+          {Tips.map((item, index) => (
+            <Card key={index}>
               <CardContent>
                 <Icon className="material-icons-outlined">info</Icon>
 

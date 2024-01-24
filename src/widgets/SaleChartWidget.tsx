@@ -29,6 +29,7 @@ const RowItems = styled.div`
 export const SaleChartWidget: FunctionComponent = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const chartData = useSelector((state: any) => state?.user.shops[state?.user?.selectedShop].chartData);
   const chartSettings: ChartSettings = useSelector((state: any) => state.globalSettings.chart);
 
   const presentedValues: ToggleItem[] = [
@@ -51,19 +52,38 @@ export const SaleChartWidget: FunctionComponent = () => {
 
   return (
     <>
-      <CardWithTitle icon="data_usage" title={t('saleChart.title')} style={{ gridArea: 'saleChart' }} link={'/'}>
-        <AlignedToRight>
-          <ChartTypeToggle value={chartSettings?.type} callback={(val) => handleChartSettingsChange('type', val)} />
-        </AlignedToRight>
+      <CardWithTitle icon="data_usage" title={t('saleChart.title')} style={{ gridArea: 'saleChart' }}>
+        {chartData?.length ?
+          <>
+            <AlignedToRight>
+              <ChartTypeToggle value={chartSettings?.type} callback={(val) => handleChartSettingsChange('type', val)} />
+            </AlignedToRight>
 
-        <SaleChart />
+            <SaleChart />
 
-        <Switch title={t('saleChart.showPreviousSerie')} checked={chartSettings.previousSerieVisible} handleChange={(val) => handleChartSettingsChange('previousSerieVisible', val)} />
-        <RowItems>
-          <Toggle title={t('saleChart.presentedValue')} items={presentedValues} handleChange={(val) => handleChartSettingsChange('presentedValues', val)} checked={chartSettings.presentedValues} />
+            <Switch title={t('saleChart.showPreviousSerie')} checked={chartSettings.previousSerieVisible} handleChange={(val) => handleChartSettingsChange('previousSerieVisible', val)} />
+            <RowItems>
+              <Toggle title={t('saleChart.presentedValue')} items={presentedValues} handleChange={(val) => handleChartSettingsChange('presentedValues', val)} checked={chartSettings.presentedValues} />
 
-          <Toggle title={t('saleChart.presentedRange')} items={presentedRange} handleChange={(val) => handleChartSettingsChange('range', val)} checked={chartSettings.range} />
-        </RowItems>
+              <Toggle title={t('saleChart.presentedRange')} items={presentedRange} handleChange={(val) => handleChartSettingsChange('range', val)} checked={chartSettings.range} />
+            </RowItems>
+          </>
+          :
+          <h2
+            style={{
+              width: "100%",
+              height: "60px",
+              textAlign: "center",
+              margin: 0,
+              padding: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {t("orders.noData")}
+          </h2>
+        }
 
       </CardWithTitle>
     </>

@@ -1,5 +1,6 @@
 {
   "title": "Dashboard",
+  "logout": "Logout",
   "customersReview": {
     "title": "Customers review",
     "displayOpinions": "Display opinions",
@@ -65,8 +66,8 @@
   },
   "login": {
     "title": "Log in",
-    "username": "username",
-    "password": "password",
+    "username": "Username",
+    "password": "Password",
     "remember": "Remember me",
     "submit": "Login",
     "register": "Register"

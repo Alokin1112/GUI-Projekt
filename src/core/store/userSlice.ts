@@ -30,6 +30,7 @@ export const userSlice = createSlice({
     },
     addStore: (state, action) => {
       state.shops.push(action.payload);
+      state.selectedShop = state.shops.length - 1;
     },
     setSelected: (state, action) => {
       state.selectedShop = action.payload;

@@ -48,7 +48,8 @@ function AspectChart({ aspect }: { aspect: Aspect }) {
       </PieChart>
       <p>
         {t("saleQuality.rating")}
-        {`${aspect.rating}/${aspect.maxRating}`}
+        <b>{`${aspect.rating}/${aspect.maxRating}`}
+        </b>
       </p>
     </Wrapper>
   );

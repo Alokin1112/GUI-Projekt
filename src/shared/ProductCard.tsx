@@ -37,11 +37,11 @@ function ProductCard({ product, sort }: MyProps) {
       {sort === "best" && (
         <>
           <div>
-            {t("offerRanking.amountSold")} {product.amountSold}
+            {t("offerRanking.amountSold")} <b>{product.amountSold}</b>
           </div>
           <div>
             {t("offerRanking.turnover")}
-            {product.turnover ?? t("offerRanking.noData")} zł
+            <b>{product.turnover ?? t("offerRanking.noData")} zł</b>
           </div>
         </>
       )}
@@ -49,11 +49,11 @@ function ProductCard({ product, sort }: MyProps) {
       {sort === "worst" && (
         <>
           <div>
-            {t("offerRanking.amountSold")} {product.amountSold}
+            {t("offerRanking.amountSold")} <b>{product.amountSold}</b>
           </div>
           <div>
             {t("offerRanking.views")}
-            {product.views ?? t("offerRanking.noData")}
+            <b>{product.views ?? t("offerRanking.noData")}</b>
           </div>
         </>
       )}

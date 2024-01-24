@@ -10,11 +10,11 @@ export function SaleChart() {
   const chartData = useSelector((state: any) => state?.user.shops[state?.user?.selectedShop].chartData)
   const chartSettings: ChartSettings = useSelector((state: any) => state.globalSettings.chart);
 
-  const [formattedChartData, setFormattedChartData] = useState(prepareDataForChart(chartData, chartSettings))
+  const [formattedChartData, setFormattedChartData] = useState([])
 
   useEffect(() => {
     setFormattedChartData(prepareDataForChart(chartData, chartSettings))
-  }, [chartSettings.range])
+  }, [chartSettings.range, chartData])
 
   return (
     <>
