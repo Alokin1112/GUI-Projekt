@@ -55,7 +55,7 @@ export const PageRouting = createBrowserRouter([
         element: <SaleQualityPage />,
       },
       {
-        path: `/${RoutesPath.ORDERS_PAGE}`,
+        path: `/${RoutesPath.ORDERS_PAGE}/:id`,
         element: <OrdersPage />,
       },
       {

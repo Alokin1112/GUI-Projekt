@@ -33,6 +33,7 @@ const OrderItem = styled.div`
   justify-content: center;
   padding: 5px 24px;
   @media (min-width: 600px) {
+    border-bottom: none;
     border-right: 1px solid var(--main-color);
   }
   &:last-child {
@@ -113,12 +114,11 @@ export const OrdersWidget: FunctionComponent = () => {
         icon="local_shipping"
         title={t("orders.title")}
         style={{ gridArea: "orders", height: "100%" }}
-        link={"/" + RoutesPath.ORDERS_PAGE}
       >
         <Container>
           {OrdersWidgetItems.map((item, index) => (
             <OrderItem key={index}>
-              <OrderItemLink to={"/"}>
+              <OrderItemLink to={"/" + RoutesPath.ORDERS_PAGE + "/" + item?.field}>
                 <span className="material-icons">{item.icon}</span>
                 <span style={{ textDecoration: "underline" }}>
                   {t(item.name)}

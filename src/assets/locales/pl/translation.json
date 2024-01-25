@@ -71,5 +71,10 @@
     "remember": "Zapamiętaj mnie",
     "submit": "Zaloguj",
     "register": "Zarejestruj się"
+  },
+  "add": {
+    "title": "Dodaj nowy sklep",
+    "placeholder": "Nazwa sklepu",
+    "submit": "Dodaj"
   }
 }
